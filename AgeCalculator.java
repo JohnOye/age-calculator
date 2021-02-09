@@ -3,10 +3,10 @@ package com.jayo;
 import java.util.*;
 import java.text.*;
 /**
- * Write a description of class AgeCalculator here.
+ * Age Calculator is used to calculate your age.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (John Oye)
+ * @version (V2.0)
  */
 public class AgeCalculator
 {
