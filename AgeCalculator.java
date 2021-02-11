@@ -3,42 +3,47 @@ package com.jayo;
 import java.util.*;
 import java.text.*;
 /**
- * Age Calculator is used to calculate your age.
+ * Used for Calculating Ones Age.
  *
  * @author (John Oye)
- * @version (V2.0)
+ * @version (1.1)
  */
 public class AgeCalculator
 {
+    
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Input Year Of Birth: ");
-        int yob = sc.nextInt();
-        System.out.println("Input Month Of Birth: ");
-        int mob = sc.nextInt();
-        System.out.println("Input Day Of Birth: ");
-        int dob = sc.nextInt();
-        Date d = new Date();
-        SimpleDateFormat y = new SimpleDateFormat("yyyy");
-        SimpleDateFormat m = new SimpleDateFormat("M");
-        SimpleDateFormat db = new SimpleDateFormat("d");
-        int yo = Integer.parseInt(y.format(d));
-        int mo = Integer.parseInt(m.format(d));
-        int ds = Integer.parseInt(db.format(d));
-         
-        int age = yo - yob;
-        if(mob > mo) {
+        System.out.println("Input Date Of Birth(dd/M/yyyy): ");
+        String dob = sc.nextLine();
+        String a1[] = dob.split("/");
+       
+        
+        int m = Integer.parseInt(a1[1]);
+       
+        int d = Integer.parseInt(a1[0]);
+        int y = Integer.parseInt(a1[2]);
+   
+        Date date = new Date();
+        SimpleDateFormat year = new SimpleDateFormat("yyyy");
+        SimpleDateFormat mon = new SimpleDateFormat("M");
+        SimpleDateFormat day = new SimpleDateFormat("d");
+        int yo = Integer.parseInt(year.format(date));
+        int mo = Integer.parseInt(mon.format(date));
+        int ds = Integer.parseInt(day.format(date));
+         int age = yo - y;
+        if(m > mo) {
            age--;
            System.out.println("You are "+age+" Years Old");
-        } else if(mob == mo) {
-         if(dob < ds) {
+        } else if(m == mo) {
+         if(d < ds) {
              age--;
              System.out.println("You are "+age+" Years Old");
-            } else if(dob == ds) {
+            } else if(d == ds) {
                 System.out.println("You are "+age+" Years Old");
             }
         }
        
+        
         
         
         
