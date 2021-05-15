@@ -1,4 +1,4 @@
-package com.jayo;
+
 
 import java.util.*;
 import java.text.*;
@@ -25,13 +25,13 @@ public class AgeCalculator
    
         Date date = new Date();
         SimpleDateFormat year = new SimpleDateFormat("yyyy");
-        SimpleDateFormat mon = new SimpleDateFormat("M");
+        SimpleDateFormat mon = new SimpleDateFormat("m");
         SimpleDateFormat day = new SimpleDateFormat("d");
         int yo = Integer.parseInt(year.format(date));
         int mo = Integer.parseInt(mon.format(date));
         int ds = Integer.parseInt(day.format(date));
          int age = yo - y;
-        if(m > mo) {
+        if(m < mo) {
            age--;
            System.out.println("You are "+age+" Years Old");
         } else if(m == mo) {
